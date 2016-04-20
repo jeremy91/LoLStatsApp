@@ -8,12 +8,12 @@ import android.os.Parcel;
  */
 public class summonerLogin implements Parcelable{
     private String summonerName;
-    private String password;
+    private String region;
     private String id;
 
-    public summonerLogin(String summonerName, String password, String id) {
+    public summonerLogin(String summonerName, String region, String id) {
         this.summonerName = summonerName;
-        this.password = password;
+        this.region = region;
         this.id = id;
     }
 
@@ -21,8 +21,8 @@ public class summonerLogin implements Parcelable{
         return summonerName;
     }
 
-    public String returnPassword() {
-        return password;
+    public String returnRegion() {
+        return region;
     }
 
     public String returnId() {
@@ -36,7 +36,7 @@ public class summonerLogin implements Parcelable{
 
         in.readStringArray(data);
         this.summonerName = data[0];
-        this.password = data[1];
+        this.region = data[1];
         this.id = data[2];
     }
 
@@ -48,7 +48,7 @@ public class summonerLogin implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeStringArray(new String[] {this.summonerName,
-                this.password, this.id});
+                this.region, this.id});
     }
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public summonerLogin createFromParcel(Parcel in) {

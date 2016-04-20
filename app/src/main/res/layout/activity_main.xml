@@ -42,8 +42,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="44dp" />
 
-    <EditText android:id="@+id/password" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:hint="@string/prompt_password"
+    <EditText android:id="@+id/region" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/prompt_region"
         android:imeActionId="@+id/login"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionUnspecified" android:inputType="textPassword"
@@ -57,10 +57,9 @@
         android:onClick="login"
         android:text="@string/action_sign_in_short"
         android:textStyle="bold"
-        android:layout_below="@+id/password"
+        android:layout_below="@+id/region"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
 
 
 </RelativeLayout>

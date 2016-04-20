@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 
     // UI references.
     private EditText summonerNameView;
-    private EditText passwordView;
+    private EditText regionView;
     private static Button signIn;
     private View mProgressView;
     private View mLoginFormView;
@@ -38,21 +38,23 @@ public class MainActivity extends Activity {
 
         signIn=(Button)findViewById(R.id.sign_in_button);
         summonerNameView=(EditText)findViewById(R.id.summoner);
-        passwordView=(EditText)findViewById(R.id.password);
+        regionView=(EditText)findViewById(R.id.region);
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String summonerName = summonerNameView.getText().toString();
-                String password = passwordView.getText().toString();
+                String region = regionView.getText().toString();
 
                 LoginConnect loginConnect = new LoginConnect(getApplicationContext(), thisActivity);
                 loginConnect.execute(summonerName, region);
 
 
+
+
                 /*if(summonerName.equals("acjd") &&
 
-                        password.equals("admin")) {
+                        region.equals("admin")) {
                     Intent gotoStatsActivity = new Intent(v.getContext(), StatsActivity.class);
                     gotoStatsActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     gotoStatsActivity.putExtra("summonerLoginHolder", summonerLoginHolder);
@@ -93,5 +95,6 @@ public class MainActivity extends Activity {
     public static Button getLoginButton() {
         return signIn;
     }
+
 
 }

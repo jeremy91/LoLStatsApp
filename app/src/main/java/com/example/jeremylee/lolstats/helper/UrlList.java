@@ -15,4 +15,10 @@ public class UrlList {
         String lowerUsername = username.toLowerCase();
         return "https://" + lowerRegion + ".api.pvp.net/api/lol/" + lowerRegion + "/v1.4/summoner/by-name/" + lowerUsername + "?api_key=" + apiKey;
     }
+
+    //Get game data
+    public static String fetchGames(String region, String summonerId) {
+        String lowerRegion = region.toLowerCase();
+        return "https://" + lowerRegion + ".api.pvp.net/api/lol/" + lowerRegion + "/v1.3/game/by-summoner/" + summonerId + "/recent?api_key=" + apiKey;
+    }
 }
